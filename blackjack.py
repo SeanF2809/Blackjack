@@ -4,10 +4,11 @@ import time
 
 player_bank = 100
 
-print("Welcome to Seans Casino - Python Blackjack!")
+print("Welcome to Sean's Casino - Python Blackjack!")
 user_name = input("Please enter your name: ")
 print("")
-      
+
+
 def game_over():
     print("G", end = '')
     time.sleep(0.2)
@@ -28,8 +29,7 @@ def game_over():
     print("R", end = '')
     time.sleep(0.2)
     exit()
-    
-    
+
 
 def random_card():
     x = random.randint(1,11)
@@ -48,15 +48,9 @@ def card_shuffle():
     print(".", end = '')
     print("")
     print("")
-    
-    
-            
-
 
 
 while player_bank > 0:
-
-
     print("Your bank is {0}".format(player_bank))
     bet = int(input("Please enter your bet: "))
     player_bank = player_bank - bet
@@ -65,16 +59,12 @@ while player_bank > 0:
         print("")
         game_over()
         
-       
     else:
         print("You have {0} left in your bank".format(player_bank))
         print("")
         time.sleep(0.5)
         card_shuffle()
-    
-        
-    
-          
+
 # dealer card randomise 
     d_card1 = random_card()
     d_card2 = random_card()
@@ -82,11 +72,8 @@ while player_bank > 0:
     p_card1 = random_card()
     p_card2 = random_card()
 
-    
     dealer_total = d_card1 + d_card2
     player_total = p_card1 + p_card2
-
-    
 
     print("The dealer has {0} & ??".format (d_card1))
     print("")
@@ -124,7 +111,7 @@ while player_bank > 0:
                     print("")
                     player_bank = player_bank + bet * 2
                     break
-                if dealer_total >= 17 and dealer_total <= 21:
+                if 17 <= dealer_total <= 21:
                     if dealer_total > player_total:
                         print("Dealer wins")
                         print("")
@@ -148,8 +135,6 @@ while player_bank > 0:
                 print("Dealer hits you clean in the nose and the security throw you out!")
                 game_over()
                 
-                
-
 else:
     game_over()
     
